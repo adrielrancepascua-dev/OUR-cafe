@@ -254,12 +254,12 @@ export function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Mobile reserve CTA placed inline near hero actions to avoid map overlap */}
-        <div className="sm:hidden mt-4 w-full max-w-lg mx-auto px-2">
+        {/* Mobile fixed Reserve CTA */}
+        <div className="sm:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)]">
           <motion.a
-            href="#menu"
+            href="#reserve"
             whileHover={{ y: -2 }}
-            className="w-full inline-flex items-center justify-center px-4 py-4 rounded-full bg-stone-900 text-white font-bold shadow-xl text-base text-center"
+            className="w-full inline-flex items-center justify-center px-4 py-4 rounded-full bg-stone-900 text-white font-bold shadow-2xl text-base text-center border-t border-stone-700"
           >
             Reserve Table
           </motion.a>

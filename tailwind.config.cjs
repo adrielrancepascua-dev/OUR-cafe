@@ -35,8 +35,6 @@ module.exports = {
           900: '#3C3630',
         },
         accent: {
-          terracotta: '#C2410C',
-          oak: '#451A03',
           warm: '#D4A574',
           soft: '#E8C9A0',
         },
