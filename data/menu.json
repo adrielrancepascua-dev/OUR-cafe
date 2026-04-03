@@ -1,0 +1,98 @@
+{
+  "menuItems": [
+    {
+      "id": 1,
+      "category": "Brewed",
+      "categoryIcon": "☕",
+      "name": "Signature Espresso",
+      "description": "Single-origin, medium roast with notes of caramel and dark chocolate. The perfect foundation for any coffee experience.",
+      "price": "₱75",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=500&fit=crop",
+      "vibe": "energizing"
+    },
+    {
+      "id": 2,
+      "category": "Brewed",
+      "categoryIcon": "☕",
+      "name": "Cold Brew Meditation",
+      "description": "Smooth, naturally sweet cold brew served over ice. Brewed for 24 hours for a mellow, refined taste.",
+      "price": "₱95",
+      "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&h=500&fit=crop",
+      "vibe": "calming"
+    },
+    {
+      "id": 3,
+      "category": "Non-Coffee",
+      "categoryIcon": "🍵",
+      "name": "Golden Turmeric Latte",
+      "description": "Anti-inflammatory turmeric blended with warm milk, cardamom, and honey. Wellness in every sip.",
+      "price": "₱125",
+      "image": "https://images.unsplash.com/photo-1586190936824-e2d3b1bb4ac5?w=500&h=500&fit=crop",
+      "vibe": "wellness"
+    },
+    {
+      "id": 4,
+      "category": "Non-Coffee",
+      "categoryIcon": "🍵",
+      "name": "Matcha Whisper",
+      "description": "Premium ceremonial matcha whisked with steamed milk. Vibrant green, earthy, and delightfully smooth.",
+      "price": "₱135",
+      "image": "https://images.unsplash.com/photo-1563318546-4be2f4e0bba4?w=500&h=500&fit=crop",
+      "vibe": "zen"
+    },
+    {
+      "id": 5,
+      "category": "Mains",
+      "categoryIcon": "🥐",
+      "name": "Smoked Salmon Toast",
+      "description": "Artisan sourdough, cream cheese, capers, and premium smoked salmon. A light, elegant brunch choice.",
+      "price": "₱285",
+      "image": "https://images.unsplash.com/photo-1595301560707-6ef13e63de61?w=500&h=500&fit=crop",
+      "vibe": "refined"
+    },
+    {
+      "id": 6,
+      "category": "Mains",
+      "categoryIcon": "🥐",
+      "name": "Roasted Vegetable Bowl",
+      "description": "Seasonal roasted vegetables, quinoa, tahini dressing. Hearty, nourishing, and Instagram-worthy.",
+      "price": "₱245",
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=500&fit=crop",
+      "vibe": "wholesome"
+    },
+    {
+      "id": 7,
+      "category": "Pastries",
+      "categoryIcon": "🍰",
+      "name": "Butter Croissant",
+      "description": "Flaky, buttery layers made fresh daily. The Parisian classic that never disappoints.",
+      "price": "₱65",
+      "image": "https://images.unsplash.com/photo-1585080872051-9bac9b32d26d?w=500&h=500&fit=crop",
+      "vibe": "indulgent"
+    },
+    {
+      "id": 8,
+      "category": "Pastries",
+      "categoryIcon": "🍰",
+      "name": "House-made Tiramisu",
+      "description": "Layers of espresso-soaked ladyfinger, mascarpone cream, and cocoa dust. A timeless Italian masterpiece.",
+      "price": "₱145",
+      "image": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500&h=500&fit=crop",
+      "vibe": "luxurious"
+    }
+  ],
+  "peakHours": [
+    { "time": "6 AM", "density": 15, "recommendation": "Best Time ✨" },
+    { "time": "8 AM", "density": 65, "recommendation": "Busy" },
+    { "time": "10 AM", "density": 45, "recommendation": "Moderate" },
+    { "time": "12 PM", "density": 80, "recommendation": "Peak Lunch" },
+    { "time": "2 PM", "density": 35, "recommendation": "Relaxed" },
+    { "time": "4 PM", "density": 50, "recommendation": "Afternoon Rush" },
+    { "time": "6 PM", "density": 75, "recommendation": "Dinner Rush" },
+    { "time": "8 PM", "density": 40, "recommendation": "Calm Evening" }
+  ],
+  "vibes": [
+    { "status": "Lively & Social", "wait": "15m", "crowd": "Bustling", "emoji": "🎉" },
+    { "status": "Relaxed & Cozy", "wait": "8m", "crowd": "Comfortable", "emoji": "☕" }
+  ]
+}

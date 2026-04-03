@@ -1,0 +1,264 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Smartphone } from 'lucide-react';
+
+export function HeroSection() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const vibes = [
+    { status: 'Lively & Social', wait: '15m', emoji: '🎉' },
+    { status: 'Relaxed & Cozy', wait: '8m', emoji: '☕' },
+  ];
+
+  const currentVibe = vibes[0];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } },
+  };
+
+  return (
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center py-16 sm:py-20 bg-stone-50">
+      {/* ===== CAFE BACKGROUND IMAGE ===== */}
+      
+      {/* Full-screen background image */}
+      <div className="absolute inset-0 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=2000&q=80"
+          alt="Cozy cafe background"
+          className="w-full h-full object-cover"
+        />
+        {/* Overlay gradient for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-50/30 to-amber-900/40" />
+      </div>
+
+      {/* Premium Gradient Accent - More Sophisticated */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-900 via-transparent via-50% to-sage-700" />
+      </div>
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10 max-w-5xl px-4 sm:px-6 lg:px-8 text-center"
+      >
+        {/* Premium Headline with Gradient Text */}
+        <motion.div variants={itemVariants} className="mb-4 inline-block">
+          <motion.div 
+            className="px-6 py-2 rounded-full bg-amber-50/60 backdrop-blur-md border border-amber-200/40 shadow-lg"
+            animate={{ 
+              boxShadow: [
+                '0 0 0 0 rgba(217, 119, 6, 0.7)',
+                '0 0 0 12px rgba(217, 119, 6, 0)'
+              ]
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            <p className="text-xs font-semibold uppercase tracking-widest text-amber-900">
+              ✨ San Fernando's Oasis ✨
+            </p>
+          </motion.div>
+        </motion.div>
+
+        {/* Masterpiece Headline */}
+        <motion.h1
+          variants={itemVariants}
+          className="font-display text-5xl sm:text-6xl lg:text-8xl font-black mb-6 sm:mb-8 leading-tight text-stone-900"
+          style={{
+            textShadow: '0 2px 12px rgba(0,0,0,0.15)'
+          }}
+        >
+          Welcome to <br />
+          <span className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-800 bg-clip-text text-transparent drop-shadow-lg">
+            OUR Cafe
+          </span>
+        </motion.h1>
+
+        {/* Elegant Subheadline - Enhanced Visibility */}
+        <motion.p
+          variants={itemVariants}
+          className="text-lg sm:text-xl lg:text-2xl mb-12 sm:mb-16 max-w-3xl mx-auto font-light leading-relaxed text-white drop-shadow-lg"
+          style={{
+            textShadow: '0 2px 8px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3)'
+          }}
+        >
+          <motion.span
+            className="inline-block font-semibold bg-gradient-to-r from-amber-100 to-amber-50 bg-clip-text text-transparent"
+            animate={{ opacity: [0.8, 1, 0.9] }}
+            transition={{ duration: 4, repeat: Infinity }}
+          >
+            Where craft meets warmth
+          </motion.span>
+          . Designed for the curious. Crafted for everyone.
+        </motion.p>
+
+        {/* Premium Glass Morphism Card - Elevated Design */}
+        <motion.div
+          variants={itemVariants}
+          whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(107, 101, 82, 0.15)' }}
+          transition={{ duration: 0.3 }}
+          className="bg-white/75 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 lg:p-12 mb-12 sm:mb-16 shadow-2xl border border-white/50 relative overflow-hidden"
+        >
+          {/* Subtle Gradient Border Animation */}
+          <div className="absolute inset-0 rounded-3xl p-[1px] bg-gradient-to-r from-amber-200/50 via-transparent to-sage-300/50 pointer-events-none" />
+          
+          <div className="relative z-10">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <motion.div
+              className="w-3 h-3 bg-emerald-500 rounded-full"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+            <p className="text-xs sm:text-sm font-medium tracking-widest uppercase text-amber-900">
+              Live Vibe Check — Real Time
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
+            {/* Current Status - Enhanced */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="py-6 sm:py-8 px-4 rounded-xl bg-gradient-to-br from-amber-50/50 to-amber-50/20 border border-amber-100/50 backdrop-blur-sm sm:border-r border-amber-200/50"
+            >
+              <motion.p
+                className="text-6xl sm:text-7xl font-bold mb-4 leading-none"
+                animate={{ rotate: [0, 5, -5, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                {currentVibe.emoji}
+              </motion.p>
+              <p className="text-xl sm:text-2xl font-semibold mb-2 text-stone-900">
+                {currentVibe.status}
+              </p>
+              <p className="text-sm text-stone-600 font-medium">Current Atmosphere</p>
+            </motion.div>
+
+            {/* Est. Wait Time - Premium Card */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="flex flex-col justify-center py-6 sm:py-8 px-4 rounded-xl bg-gradient-to-br from-sage-50/50 to-sage-50/20 border border-sage-100/50 backdrop-blur-sm"
+            >
+              <p className="text-6xl sm:text-7xl font-black mb-3 text-amber-900 font-mono">
+                {currentVibe.wait}
+              </p>
+              <p className="text-sm text-stone-600 mb-4 font-medium">Estimated Peak Time</p>
+              <motion.p
+                className="text-xs text-emerald-600 font-semibold uppercase tracking-widest"
+                animate={{ opacity: [0.8, 1, 0.8] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                ⚡ Fast Service Available
+              </motion.p>
+            </motion.div>
+          </div>
+          </div>
+        </motion.div>
+
+        {/* Premium CTA Buttons - Luxury Styling */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-12"
+        >
+          {/* Primary CTA - Sophisticated */}
+          <motion.button
+            whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(107, 101, 82, 0.3)' }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative overflow-hidden bg-gradient-to-br from-amber-900 to-amber-950 hover:from-amber-800 hover:to-amber-900 text-white px-8 sm:px-12 lg:px-14 py-4 sm:py-5 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-xl border border-amber-700/50 hover:border-amber-600"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/15 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-standard" />
+            <span className="relative">View Digital Menu</span>
+            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-quick relative" />
+          </motion.button>
+
+          {/* Secondary CTA - Elegant Border */}
+          <motion.button
+            whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(107, 101, 82, 0.2)' }}
+            whileTap={{ scale: 0.95 }}
+            className="group border-2 border-amber-900 bg-white/70 hover:bg-white backdrop-blur-sm text-amber-900 px-8 sm:px-12 lg:px-14 py-4 sm:py-5 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-lg hover:border-amber-800 hover:shadow-2xl"
+          >
+            <Smartphone size={20} />
+            <span className="relative">Reserve Your Spot</span>
+          </motion.button>
+        </motion.div>
+
+        {/* Signature Tagline - Subtle Animation */}
+        <motion.p
+          variants={itemVariants}
+          className="mt-16 sm:mt-20 text-xs sm:text-sm tracking-[0.15em] uppercase font-medium text-white drop-shadow-lg flex items-center justify-center gap-3"
+        >
+          <motion.span
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 5, repeat: Infinity }}
+          >
+            ☕
+          </motion.span>
+          Craft • Culture • Connection
+          <motion.span
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
+          >
+            ☕
+          </motion.span>
+        </motion.p>
+      </motion.div>
+
+      {/* ===== FEATURED SPECIALTIES SECTION ===== */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="relative z-20 mt-24 py-20 px-4 sm:px-6 lg:px-8"
+      >
+        <motion.h2
+          variants={itemVariants}
+          className="text-4xl sm:text-5xl font-bold text-center mb-4 text-stone-900"
+        >
+          Our Signature Collection
+        </motion.h2>
+        <motion.p
+          variants={itemVariants}
+          className="text-center text-stone-600 mb-16 max-w-2xl mx-auto"
+        >
+          Handpicked blends and artisanal creations, crafted daily
+        </motion.p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            { icon: '☕', name: 'Signature Blend', desc: 'Smooth, balanced, unforgettable' },
+            { icon: '🎨', name: 'Latte Art Master', desc: 'Visual presentation meets taste' },
+            { icon: '🌿', name: 'Cold Brew Classics', desc: 'Smooth, refreshing, legendary' },
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              whileHover={{ y: -8 }}
+              className="bg-white/80 backdrop-blur-lg rounded-2xl p-8 sm:p-10 text-center shadow-lg border border-amber-100/50 hover:shadow-2xl transition-all"
+            >
+              <p className="text-5xl mb-4">{item.icon}</p>
+              <h3 className="text-xl font-semibold text-stone-900 mb-2">{item.name}</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+}

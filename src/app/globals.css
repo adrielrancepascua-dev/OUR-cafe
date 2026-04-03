@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   DESIGN SYSTEM VARIABLES
+   Generated from UI/UX Pro Max
+   Industry: Hospitality → Premium Cafe
+   ============================================ */
+
+:root {
+  /* COLOR PALETTE - Warm Premium Hospitality */
+  --color-primary: #6B6552;         /* Cafe Brown */
+  --color-primary-dark: #5A5242;     /* Darker variant for hover */
+  --color-primary-light: #8B7E6F;    /* Lighter variant */
+  --color-secondary: #D4A574;        /* Warm Accent Gold */
+  --color-secondary-light: #E8C9A0;  /* Light gold */
+  --color-accent: #92B77D;           /* Sage Green */
+  --color-accent-dark: #7A9B68;      /* Darker sage */
+  
+  /* BACKGROUND & TEXT */
+  --color-bg-primary: #FAF9F6;       /* Soft Cream */
+  --color-bg-secondary: #F5F1E3;     /* Warm White */
+  --color-bg-tertiary: #E8E0D0;      /* Light Taupe */
+  --color-text-primary: #1A1917;     /* Deep Charcoal */
+  --color-text-secondary: #6B6552;   /* Warm Gray */
+  --color-text-tertiary: #A69F92;    /* Muted Gray */
+  --color-text-inverse: #FAF9F6;     /* Inverse (on dark) */
+  
+  /* BORDERS & DIVIDERS */
+  --color-border: #E8E0D0;           /* Primary border */
+  --color-border-light: #F5F1E3;     /* Light border */
+  
+  /* SEMANTIC COLORS */
+  --color-success: #2E8B57;          /* Green */
+  --color-warning: #CA8A04;          /* Amber */
+  --color-error: #DC2626;            /* Red */
+  --color-info: #0891B2;             /* Cyan */
+  
+  /* TYPOGRAPHY */
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-mono: 'Courier New', monospace;
+  
+  /* FONT SIZES */
+  --text-display: 64px;
+  --text-h1: 48px;
+  --text-h2: 36px;
+  --text-h3: 28px;
+  --text-h4: 24px;
+  --text-lg: 18px;
+  --text-base: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+  
+  /* LINE HEIGHTS */
+  --leading-tight: 1.1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.75;
+  
+  /* SPACING SCALE */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  
+  /* BORDER RADIUS */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+  
+  /* SHADOWS */
+  --shadow-xs: 0 1px 2px rgba(26, 25, 23, 0.05);
+  --shadow-sm: 0 1px 3px rgba(26, 25, 23, 0.1);
+  --shadow-md: 0 2px 8px rgba(26, 25, 23, 0.08);
+  --shadow-lg: 0 4px 12px rgba(26, 25, 23, 0.1);
+  --shadow-xl: 0 8px 24px rgba(26, 25, 23, 0.12);
+  --shadow-2xl: 0 16px 40px rgba(26, 25, 23, 0.15);
+  
+  /* TRANSITIONS */
+  --transition-quick: 150ms ease-in-out;
+  --transition-standard: 250ms ease-in-out;
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Z-INDEX SCALE */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-quick: 0ms;
+    --transition-standard: 0ms;
+    --transition-slow: 0ms;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   TAILWIND DIRECTIVES
+   ============================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-cream-200 text-charcoal-900 leading-normal;
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+}
+
+/* ============================================
+   TYPOGRAPHY STYLES
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+
+h1 {
+  font-size: var(--text-h1);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--text-h2);
+  margin-bottom: var(--space-lg);
+  line-height: var(--leading-snug);
+}
+
+h3 {
+  font-size: var(--text-h3);
+  margin-bottom: var(--space-md);
+}
+
+h4 {
+  font-size: var(--text-h4);
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  line-height: var(--leading-relaxed);
+}
+
+p + p {
+  margin-top: 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color var(--transition-quick);
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  @apply mx-auto px-4 md:px-6 lg:px-8 max-w-6xl;
+}
+
+.glass {
+  background: rgba(255, 248, 243, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(107, 101, 82, 0.1);
+}
