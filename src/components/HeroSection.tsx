@@ -92,13 +92,9 @@ export function HeroSection() {
           </div>
 
           {/* Premium Glass Morphism Card - Elevated Design */}
-          <motion.div
+          <motion.h1
             variants={itemVariants}
-            whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(107, 101, 82, 0.15)' }}
-            transition={{ duration: 0.3 }}
-            className="hidden sm:block bg-white/75 backdrop-blur-2xl rounded-3xl p-5 sm:p-10 lg:p-12 mb-8 sm:mb-16 shadow-2xl border border-white/50 relative overflow-hidden"
-          >
-            }}
+            className="hidden sm:block text-center mb-6 text-stone-900"
           >
             Welcome to <br />
             <span className="inline-block text-8xl sm:text-9xl lg:text-[6rem] leading-none bg-gradient-to-r from-amber-950 via-amber-900 to-amber-800 bg-clip-text text-transparent drop-shadow-xl">
