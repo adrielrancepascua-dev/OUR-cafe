@@ -86,7 +86,7 @@ export function HeroSection() {
           }}
         >
           Welcome to <br />
-          <span className="bg-gradient-to-r from-amber-950 via-amber-900 to-amber-800 bg-clip-text text-transparent drop-shadow-lg">
+          <span className="inline-block text-6xl sm:text-8xl lg:text-9xl bg-gradient-to-r from-amber-950 via-amber-900 to-amber-800 bg-clip-text text-transparent drop-shadow-lg">
             OUR Cafe
           </span>
         </motion.h1>
@@ -109,12 +109,20 @@ export function HeroSection() {
           . Designed for the curious. Crafted for everyone.
         </motion.p>
 
+        {/* Mobile compact live badge (replaces large card on small screens) */}
+        <div className="sm:hidden flex items-center justify-center mb-6">
+          <div className="inline-flex items-center gap-3 bg-white/85 text-amber-900 px-4 py-2 rounded-full shadow-sm">
+            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+            <span className="text-sm font-semibold">Lively & Social • 15m</span>
+          </div>
+        </div>
+
         {/* Premium Glass Morphism Card - Elevated Design */}
         <motion.div
           variants={itemVariants}
           whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(107, 101, 82, 0.15)' }}
           transition={{ duration: 0.3 }}
-          className="bg-white/75 backdrop-blur-2xl rounded-3xl p-5 sm:p-10 lg:p-12 mb-8 sm:mb-16 shadow-2xl border border-white/50 relative overflow-hidden"
+          className="hidden sm:block bg-white/75 backdrop-blur-2xl rounded-3xl p-5 sm:p-10 lg:p-12 mb-8 sm:mb-16 shadow-2xl border border-white/50 relative overflow-hidden"
         >
           {/* Subtle Gradient Border Animation */}
           <div className="absolute inset-0 rounded-3xl p-[1px] bg-gradient-to-r from-amber-200/50 via-transparent to-sage-300/50 pointer-events-none" />
