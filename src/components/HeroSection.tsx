@@ -76,7 +76,7 @@ export function HeroSection() {
             <p className="text-xs font-semibold uppercase tracking-widest text-amber-900">
               ✨ San Fernando's Oasis ✨
             </p>
-          </motion.p>
+          </motion.div>
 
           {/* Mobile compact live badge (replaces large card on small screens) */}
           <div className="sm:hidden flex items-center justify-center mb-4">
