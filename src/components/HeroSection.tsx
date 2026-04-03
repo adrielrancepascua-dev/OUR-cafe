@@ -62,9 +62,9 @@ export function HeroSection() {
         className="relative z-10 max-w-5xl px-4 sm:px-6 lg:px-8 text-center"
       >
         {/* Premium Headline with Gradient Text */}
-        <motion.div variants={itemVariants} className="mb-4 inline-block">
+        <motion.div variants={itemVariants} className="mb-4 w-full flex flex-col items-center">
           <motion.div 
-            className="px-6 py-2 rounded-full bg-amber-50/60 backdrop-blur-md border border-amber-200/40 shadow-lg"
+            className="w-full max-w-[19rem] px-4 py-2 rounded-full bg-amber-50/70 backdrop-blur-md border border-amber-200/60 shadow-lg text-center"
             animate={{ 
               boxShadow: [
                 '0 0 0 0 rgba(217, 119, 6, 0.7)',
@@ -73,16 +73,23 @@ export function HeroSection() {
             }}
             transition={{ duration: 3, repeat: Infinity }}
           >
-            <p className="text-xs font-semibold uppercase tracking-widest text-amber-900">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-900">
               ✨ San Fernando's Oasis ✨
             </p>
           </motion.div>
 
           {/* Mobile compact live badge (replaces large card on small screens) */}
           <div className="sm:hidden flex items-center justify-center mb-3">
-            <div className="inline-flex items-center gap-2 bg-white/95 text-amber-900 px-3 py-1.5 rounded-full shadow-sm text-sm">
+            <div className="inline-flex items-center gap-2 bg-white/95 text-amber-900 px-3 py-1.5 rounded-full shadow-md text-sm border border-white/80">
               <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
               <span className="font-semibold">Lively & Social • 15m</span>
+              <motion.span
+                className="text-base leading-none"
+                animate={{ rotate: [0, 12, -12, 0] }}
+                transition={{ duration: 2.6, repeat: Infinity }}
+              >
+                ✨
+              </motion.span>
             </div>
           </div>
 
@@ -98,10 +105,21 @@ export function HeroSection() {
           </motion.h1>
         </motion.div>
 
+        {/* Mobile hero title emphasis */}
+        <motion.h1
+          variants={itemVariants}
+          className="sm:hidden mb-5 text-center"
+        >
+          <span className="block text-xs uppercase tracking-[0.2em] text-amber-100/90 mb-1">Welcome to</span>
+          <span className="block text-5xl leading-[0.9] font-bold bg-gradient-to-r from-amber-100 via-amber-50 to-white bg-clip-text text-transparent drop-shadow-[0_6px_18px_rgba(0,0,0,0.45)]">
+            OUR Cafe
+          </span>
+        </motion.h1>
+
         {/* Elegant Subheadline - Enhanced Visibility */}
         <motion.p
           variants={itemVariants}
-          className="text-base sm:text-xl lg:text-2xl mb-8 sm:mb-16 max-w-3xl mx-auto font-light leading-relaxed text-white drop-shadow-lg px-2 sm:px-0"
+          className="text-lg sm:text-xl lg:text-2xl mb-8 sm:mb-16 max-w-3xl mx-auto font-light leading-relaxed text-white drop-shadow-lg px-2 sm:px-0"
           style={{
             textShadow: '0 2px 8px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3)'
           }}

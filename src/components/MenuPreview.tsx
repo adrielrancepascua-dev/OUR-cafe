@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Plus, ShoppingCart } from 'lucide-react';
+import { ArrowLeft, X, Plus, ShoppingCart } from 'lucide-react';
 import menuData from '../../data/menu.json';
 
 interface MenuItem {
@@ -45,13 +45,24 @@ function MenuItemDetail({ item, isOpen, onClose }: MenuItemDetailProps) {
             className="fixed right-0 top-0 h-full w-full md:w-[450px] z-50 shadow-2xl overflow-y-auto bg-white"
           >
             <div className="p-6 sm:p-8">
-              {/* Close Button */}
-              <button
-                onClick={onClose}
-                className="absolute top-6 right-6 p-2 rounded-full hover:bg-stone-100 transition-colors text-stone-500"
-              >
-                <X size={24} />
-              </button>
+              {/* Sticky header with clear exit controls */}
+              <div className="sticky top-0 z-10 -mx-6 sm:-mx-8 px-4 sm:px-6 py-3 mb-5 bg-white/95 backdrop-blur-md border-b border-stone-200 flex items-center justify-between">
+                <button
+                  onClick={onClose}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-stone-700 px-3 py-2 rounded-full hover:bg-stone-100 transition-colors"
+                >
+                  <ArrowLeft size={18} />
+                  Back to menu
+                </button>
+
+                <button
+                  onClick={onClose}
+                  aria-label="Close details"
+                  className="p-2 rounded-full hover:bg-stone-100 transition-colors text-stone-500"
+                >
+                  <X size={20} />
+                </button>
+              </div>
 
               {/* Item Image */}
               <div className="mb-6 rounded-xl sm:rounded-2xl overflow-hidden h-64 sm:h-72">
