@@ -46,6 +46,8 @@ export function HeroSection() {
         />
         {/* Overlay gradient for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-50/30 to-amber-900/40" />
+        {/* stronger dark overlay on mobile for legibility */}
+        <div className="absolute inset-0 bg-black/30 sm:bg-transparent pointer-events-none" />
       </div>
 
       {/* Premium Gradient Accent - More Sophisticated */}
@@ -74,22 +76,35 @@ export function HeroSection() {
             <p className="text-xs font-semibold uppercase tracking-widest text-amber-900">
               ✨ San Fernando's Oasis ✨
             </p>
-          </motion.div>
-        </motion.div>
+          </motion.p>
 
-        {/* Masterpiece Headline */}
-        <motion.h1
-          variants={itemVariants}
-          className="font-display text-5xl min-[375px]:text-5xl sm:text-6xl lg:text-8xl font-black mb-4 sm:mb-8 leading-tight text-stone-900"
-          style={{
-            textShadow: '0 2px 12px rgba(0,0,0,0.15)'
-          }}
-        >
-          Welcome to <br />
-          <span className="inline-block text-6xl sm:text-8xl lg:text-9xl bg-gradient-to-r from-amber-950 via-amber-900 to-amber-800 bg-clip-text text-transparent drop-shadow-lg">
-            OUR Cafe
-          </span>
-        </motion.h1>
+          {/* Mobile compact live badge (replaces large card on small screens) */}
+          <div className="sm:hidden flex items-center justify-center mb-4">
+            <div className="inline-flex items-center gap-3 bg-white/95 text-amber-900 px-4 py-2 rounded-full shadow-sm">
+              <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+              <span className="text-sm font-semibold">Lively & Social • 15m</span>
+            </div>
+          </div>
+
+          {/* Mobile CTA to view collection (single compact action) */}
+          <div className="sm:hidden flex items-center justify-center mb-6">
+            <a href="#menu" className="px-5 py-3 bg-amber-900 text-white rounded-full font-semibold shadow">See Collection</a>
+          </div>
+
+          {/* Premium Glass Morphism Card - Elevated Design */}
+          <motion.div
+            variants={itemVariants}
+            whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(107, 101, 82, 0.15)' }}
+            transition={{ duration: 0.3 }}
+            className="hidden sm:block bg-white/75 backdrop-blur-2xl rounded-3xl p-5 sm:p-10 lg:p-12 mb-8 sm:mb-16 shadow-2xl border border-white/50 relative overflow-hidden"
+          >
+            }}
+          >
+            Welcome to <br />
+            <span className="inline-block text-8xl sm:text-9xl lg:text-[6rem] leading-none bg-gradient-to-r from-amber-950 via-amber-900 to-amber-800 bg-clip-text text-transparent drop-shadow-xl">
+              OUR Cafe
+            </span>
+          </motion.h1>
 
         {/* Elegant Subheadline - Enhanced Visibility */}
         <motion.p
@@ -233,7 +248,7 @@ export function HeroSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="relative z-20 mt-16 sm:mt-24 py-12 sm:py-20 px-3 sm:px-6 lg:px-8"
+        className="hidden sm:block relative z-20 mt-16 sm:mt-24 py-12 sm:py-20 px-3 sm:px-6 lg:px-8"
       >
         <motion.h2
           variants={itemVariants}
