@@ -46,8 +46,8 @@ export function HeroSection() {
         />
         {/* Overlay gradient for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-50/30 to-amber-900/40" />
-        {/* stronger dark overlay on mobile for legibility */}
-        <div className="absolute inset-0 bg-black/30 sm:bg-transparent pointer-events-none" />
+        {/* Subtle dark gradient overlay to improve white text legibility across viewports */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/30 pointer-events-none" />
       </div>
 
       {/* Premium Gradient Accent - More Sophisticated */}
@@ -79,16 +79,11 @@ export function HeroSection() {
           </motion.div>
 
           {/* Mobile compact live badge (replaces large card on small screens) */}
-          <div className="sm:hidden flex items-center justify-center mb-4">
-            <div className="inline-flex items-center gap-3 bg-white/95 text-amber-900 px-4 py-2 rounded-full shadow-sm">
+          <div className="sm:hidden flex items-center justify-center mb-3">
+            <div className="inline-flex items-center gap-2 bg-white/95 text-amber-900 px-3 py-1.5 rounded-full shadow-sm text-sm">
               <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-              <span className="text-sm font-semibold">Lively & Social • 15m</span>
+              <span className="font-semibold">Lively & Social • 15m</span>
             </div>
-          </div>
-
-          {/* Mobile CTA to view collection (single compact action) */}
-          <div className="sm:hidden flex items-center justify-center mb-6">
-            <a href="#menu" className="px-5 py-3 bg-amber-900 text-white rounded-full font-semibold shadow">See Collection</a>
           </div>
 
           {/* Premium Glass Morphism Card - Elevated Design */}
@@ -120,14 +115,6 @@ export function HeroSection() {
           </motion.span>
           . Designed for the curious. Crafted for everyone.
         </motion.p>
-
-        {/* Mobile compact live badge (replaces large card on small screens) */}
-        <div className="sm:hidden flex items-center justify-center mb-6">
-          <div className="inline-flex items-center gap-3 bg-white/85 text-amber-900 px-4 py-2 rounded-full shadow-sm">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-            <span className="text-sm font-semibold">Lively & Social • 15m</span>
-          </div>
-        </div>
 
         {/* Premium Glass Morphism Card - Elevated Design */}
         <motion.div
@@ -191,32 +178,52 @@ export function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Premium CTA Buttons - Luxury Styling */}
+        {/* Premium CTA Buttons - Mobile-optimized and grouped */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center mt-8 sm:mt-12"
+          className="mt-8 sm:mt-12"
         >
-          {/* Primary CTA - Sophisticated */}
-          <motion.button
-            whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(107, 101, 82, 0.3)' }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative overflow-hidden bg-gradient-to-br from-amber-900 to-amber-950 hover:from-amber-800 hover:to-amber-900 text-white px-6 sm:px-12 lg:px-14 py-3 sm:py-5 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-xl border border-amber-700/50 hover:border-amber-600 text-sm sm:text-base"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/15 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-standard" />
-            <span className="relative">View Menu</span>
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-quick relative" />
-          </motion.button>
+          <div className="grid grid-cols-2 gap-3 w-full max-w-lg mx-auto sm:flex sm:flex-row sm:gap-6 sm:justify-center">
+            <motion.a
+              href="#menu"
+              whileHover={{ y: -4 }}
+              className="w-full inline-flex items-center justify-center px-4 py-2 text-sm sm:text-base rounded-full bg-amber-900 text-white font-semibold shadow text-center"
+            >
+              View Menu
+            </motion.a>
 
-          {/* Secondary CTA - Elegant Border */}
-          <motion.button
-            whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(107, 101, 82, 0.2)' }}
-            whileTap={{ scale: 0.95 }}
-            className="group border-2 border-amber-900 bg-white/70 hover:bg-white backdrop-blur-sm text-amber-900 px-6 sm:px-12 lg:px-14 py-3 sm:py-5 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-lg hover:border-amber-800 hover:shadow-2xl text-sm sm:text-base"
-          >
-            <Smartphone size={18} />
-            <span className="relative">Reserve</span>
-          </motion.button>
+            <motion.a
+              href="#collection"
+              whileHover={{ y: -2 }}
+              className="w-full inline-flex items-center justify-center px-4 py-2 text-sm sm:text-base rounded-full border border-white/30 bg-transparent text-white font-semibold text-center"
+            >
+              See Collection
+            </motion.a>
+          </div>
+
+          {/* Reserve remains prominent on desktop; mobile gets a fixed footer */}
+          <div className="hidden sm:flex sm:justify-center sm:mt-4">
+            <motion.button
+              whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(107, 101, 82, 0.2)' }}
+              whileTap={{ scale: 0.95 }}
+              className="group border-2 border-amber-900 bg-white/70 hover:bg-white backdrop-blur-sm text-amber-900 px-6 lg:px-14 py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-lg hover:border-amber-800 hover:shadow-2xl text-sm sm:text-base"
+            >
+              <Smartphone size={18} />
+              <span className="relative">Reserve</span>
+            </motion.button>
+          </div>
         </motion.div>
+
+        {/* Mobile fixed Reserve CTA */}
+        <div className="sm:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)]">
+          <motion.a
+            href="#reserve"
+            whileHover={{ y: -2 }}
+            className="w-full inline-flex items-center justify-center px-4 py-3 rounded-full bg-amber-900 text-white font-bold shadow-xl text-base text-center"
+          >
+            Reserve
+          </motion.a>
+        </div>
 
         {/* Signature Tagline - Subtle Animation */}
         <motion.p
