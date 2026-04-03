@@ -101,6 +101,7 @@ export function HeroSection() {
               OUR Cafe
             </span>
           </motion.h1>
+        </motion.div>
 
         {/* Elegant Subheadline - Enhanced Visibility */}
         <motion.p
