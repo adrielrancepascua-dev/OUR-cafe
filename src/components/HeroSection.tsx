@@ -62,7 +62,7 @@ export function HeroSection() {
         className="relative z-10 max-w-5xl px-4 sm:px-6 lg:px-8 text-center"
       >
         {/* Premium Headline with Gradient Text */}
-        <motion.div variants={itemVariants} className="mb-4 w-full flex flex-col items-center">
+        <motion.div variants={itemVariants} className="mb-4 w-full flex flex-col items-center gap-3">
           <motion.div 
             className="w-full max-w-[19rem] px-4 py-2 rounded-full bg-amber-50/70 backdrop-blur-md border border-amber-200/60 shadow-lg text-center"
             animate={{ 
