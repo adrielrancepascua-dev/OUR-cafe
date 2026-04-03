@@ -34,7 +34,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center justify-center py-16 sm:py-20 bg-stone-50">
+    <section className="relative overflow-hidden min-h-screen flex items-center justify-center py-16 sm:py-20 bg-stone-50 w-full">
       {/* ===== CAFE BACKGROUND IMAGE ===== */}
       
       {/* Full-screen background image */}
@@ -80,7 +80,7 @@ export function HeroSection() {
         {/* Masterpiece Headline */}
         <motion.h1
           variants={itemVariants}
-          className="font-display text-4xl sm:text-6xl lg:text-8xl font-black mb-4 sm:mb-8 leading-tight text-stone-900"
+          className="font-display text-5xl min-[375px]:text-5xl sm:text-6xl lg:text-8xl font-black mb-4 sm:mb-8 leading-tight text-stone-900"
           style={{
             textShadow: '0 2px 12px rgba(0,0,0,0.15)'
           }}
@@ -114,20 +114,20 @@ export function HeroSection() {
           variants={itemVariants}
           whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(107, 101, 82, 0.15)' }}
           transition={{ duration: 0.3 }}
-          className="bg-white/75 backdrop-blur-2xl rounded-3xl p-6 sm:p-10 lg:p-12 mb-8 sm:mb-16 shadow-2xl border border-white/50 relative overflow-hidden mx-2 sm:mx-0"
+          className=\"bg-white/75 backdrop-blur-2xl rounded-3xl p-5 sm:p-10 lg:p-12 mb-8 sm:mb-16 shadow-2xl border border-white/50 relative overflow-hidden\"
         >
           {/* Subtle Gradient Border Animation */}
           <div className="absolute inset-0 rounded-3xl p-[1px] bg-gradient-to-r from-amber-200/50 via-transparent to-sage-300/50 pointer-events-none" />
           
           <div className="relative z-10">
-          <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             <motion.div
-              className="w-3 h-3 bg-emerald-500 rounded-full"
+              className="w-2 sm:w-3 h-2 sm:h-3 bg-emerald-500 rounded-full flex-shrink-0"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <p className="text-xs sm:text-sm font-medium tracking-widest uppercase text-amber-900">
-              Live Vibe Check — Real Time
+            <p className="text-[11px] sm:text-sm font-medium tracking-widest uppercase text-amber-900 whitespace-nowrap">
+              Live Check • Real Time
             </p>
           </div>
 
@@ -138,16 +138,16 @@ export function HeroSection() {
               className="py-4 sm:py-8 px-3 sm:px-4 rounded-xl bg-gradient-to-br from-amber-50/50 to-amber-50/20 border border-amber-100/50 backdrop-blur-sm sm:border-r border-amber-200/50"
             >
               <motion.p
-                className="text-5xl sm:text-7xl font-bold mb-3 sm:mb-4 leading-none"
+                className="text-4xl sm:text-7xl font-bold mb-2 sm:mb-4 leading-none"
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 {currentVibe.emoji}
               </motion.p>
-              <p className="text-lg sm:text-2xl font-semibold mb-1 sm:mb-2 text-stone-900">
+              <p className="text-base sm:text-2xl font-semibold mb-1 sm:mb-2 text-stone-900">
                 {currentVibe.status}
               </p>
-              <p className="text-xs sm:text-sm text-stone-600 font-medium">Current Atmosphere</p>
+              <p className="text-[10px] sm:text-sm text-stone-600 font-medium">Current Atmosphere</p>
             </motion.div>
 
             {/* Est. Wait Time - Premium Card */}
@@ -155,10 +155,10 @@ export function HeroSection() {
               whileHover={{ scale: 1.02 }}
               className="flex flex-col justify-center py-4 sm:py-8 px-3 sm:px-4 rounded-xl bg-gradient-to-br from-sage-50/50 to-sage-50/20 border border-sage-100/50 backdrop-blur-sm"
             >
-              <p className="text-5xl sm:text-7xl font-black mb-2 sm:mb-3 text-amber-900 font-mono">
+              <p className="text-4xl sm:text-7xl font-black mb-2 sm:mb-3 text-amber-900 font-mono">
                 {currentVibe.wait}
               </p>
-              <p className="text-xs sm:text-sm text-stone-600 mb-3 sm:mb-4 font-medium">Estimated Peak Time</p>
+              <p className="text-[10px] sm:text-sm text-stone-600 mb-2 sm:mb-4 font-medium">Estimated Peak Time</p>
               <motion.p
                 className="text-xs text-emerald-600 font-semibold uppercase tracking-widest"
                 animate={{ opacity: [0.8, 1, 0.8] }}
@@ -174,7 +174,7 @@ export function HeroSection() {
         {/* Premium CTA Buttons - Luxury Styling */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center mt-8 sm:mt-12 px-2 sm:px-0 w-full"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center mt-8 sm:mt-12"
         >
           {/* Primary CTA - Sophisticated */}
           <motion.button
