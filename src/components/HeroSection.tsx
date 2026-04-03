@@ -80,7 +80,7 @@ export function HeroSection() {
         {/* Masterpiece Headline */}
         <motion.h1
           variants={itemVariants}
-          className="font-display text-5xl sm:text-6xl lg:text-8xl font-black mb-6 sm:mb-8 leading-tight text-stone-900"
+          className="font-display text-4xl sm:text-6xl lg:text-8xl font-black mb-4 sm:mb-8 leading-tight text-stone-900"
           style={{
             textShadow: '0 2px 12px rgba(0,0,0,0.15)'
           }}
@@ -94,7 +94,7 @@ export function HeroSection() {
         {/* Elegant Subheadline - Enhanced Visibility */}
         <motion.p
           variants={itemVariants}
-          className="text-lg sm:text-xl lg:text-2xl mb-12 sm:mb-16 max-w-3xl mx-auto font-light leading-relaxed text-white drop-shadow-lg"
+          className="text-base sm:text-xl lg:text-2xl mb-8 sm:mb-16 max-w-3xl mx-auto font-light leading-relaxed text-white drop-shadow-lg px-2 sm:px-0"
           style={{
             textShadow: '0 2px 8px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3)'
           }}
@@ -114,7 +114,7 @@ export function HeroSection() {
           variants={itemVariants}
           whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(107, 101, 82, 0.15)' }}
           transition={{ duration: 0.3 }}
-          className="bg-white/75 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 lg:p-12 mb-12 sm:mb-16 shadow-2xl border border-white/50 relative overflow-hidden"
+          className="bg-white/75 backdrop-blur-2xl rounded-3xl p-6 sm:p-10 lg:p-12 mb-8 sm:mb-16 shadow-2xl border border-white/50 relative overflow-hidden mx-2 sm:mx-0"
         >
           {/* Subtle Gradient Border Animation */}
           <div className="absolute inset-0 rounded-3xl p-[1px] bg-gradient-to-r from-amber-200/50 via-transparent to-sage-300/50 pointer-events-none" />
@@ -131,34 +131,34 @@ export function HeroSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-10">
             {/* Current Status - Enhanced */}
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="py-6 sm:py-8 px-4 rounded-xl bg-gradient-to-br from-amber-50/50 to-amber-50/20 border border-amber-100/50 backdrop-blur-sm sm:border-r border-amber-200/50"
+              className="py-4 sm:py-8 px-3 sm:px-4 rounded-xl bg-gradient-to-br from-amber-50/50 to-amber-50/20 border border-amber-100/50 backdrop-blur-sm sm:border-r border-amber-200/50"
             >
               <motion.p
-                className="text-6xl sm:text-7xl font-bold mb-4 leading-none"
+                className="text-5xl sm:text-7xl font-bold mb-3 sm:mb-4 leading-none"
                 animate={{ rotate: [0, 5, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 {currentVibe.emoji}
               </motion.p>
-              <p className="text-xl sm:text-2xl font-semibold mb-2 text-stone-900">
+              <p className="text-lg sm:text-2xl font-semibold mb-1 sm:mb-2 text-stone-900">
                 {currentVibe.status}
               </p>
-              <p className="text-sm text-stone-600 font-medium">Current Atmosphere</p>
+              <p className="text-xs sm:text-sm text-stone-600 font-medium">Current Atmosphere</p>
             </motion.div>
 
             {/* Est. Wait Time - Premium Card */}
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="flex flex-col justify-center py-6 sm:py-8 px-4 rounded-xl bg-gradient-to-br from-sage-50/50 to-sage-50/20 border border-sage-100/50 backdrop-blur-sm"
+              className="flex flex-col justify-center py-4 sm:py-8 px-3 sm:px-4 rounded-xl bg-gradient-to-br from-sage-50/50 to-sage-50/20 border border-sage-100/50 backdrop-blur-sm"
             >
-              <p className="text-6xl sm:text-7xl font-black mb-3 text-amber-900 font-mono">
+              <p className="text-5xl sm:text-7xl font-black mb-2 sm:mb-3 text-amber-900 font-mono">
                 {currentVibe.wait}
               </p>
-              <p className="text-sm text-stone-600 mb-4 font-medium">Estimated Peak Time</p>
+              <p className="text-xs sm:text-sm text-stone-600 mb-3 sm:mb-4 font-medium">Estimated Peak Time</p>
               <motion.p
                 className="text-xs text-emerald-600 font-semibold uppercase tracking-widest"
                 animate={{ opacity: [0.8, 1, 0.8] }}
@@ -174,34 +174,34 @@ export function HeroSection() {
         {/* Premium CTA Buttons - Luxury Styling */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-12"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center mt-8 sm:mt-12 px-2 sm:px-0 w-full"
         >
           {/* Primary CTA - Sophisticated */}
           <motion.button
             whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(107, 101, 82, 0.3)' }}
             whileTap={{ scale: 0.95 }}
-            className="group relative overflow-hidden bg-gradient-to-br from-amber-900 to-amber-950 hover:from-amber-800 hover:to-amber-900 text-white px-8 sm:px-12 lg:px-14 py-4 sm:py-5 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-xl border border-amber-700/50 hover:border-amber-600"
+            className="group relative overflow-hidden bg-gradient-to-br from-amber-900 to-amber-950 hover:from-amber-800 hover:to-amber-900 text-white px-6 sm:px-12 lg:px-14 py-3 sm:py-5 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-xl border border-amber-700/50 hover:border-amber-600 text-sm sm:text-base"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/15 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-standard" />
-            <span className="relative">View Digital Menu</span>
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-quick relative" />
+            <span className="relative">View Menu</span>
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-quick relative" />
           </motion.button>
 
           {/* Secondary CTA - Elegant Border */}
           <motion.button
             whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(107, 101, 82, 0.2)' }}
             whileTap={{ scale: 0.95 }}
-            className="group border-2 border-amber-900 bg-white/70 hover:bg-white backdrop-blur-sm text-amber-900 px-8 sm:px-12 lg:px-14 py-4 sm:py-5 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-lg hover:border-amber-800 hover:shadow-2xl"
+            className="group border-2 border-amber-900 bg-white/70 hover:bg-white backdrop-blur-sm text-amber-900 px-6 sm:px-12 lg:px-14 py-3 sm:py-5 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-lg hover:border-amber-800 hover:shadow-2xl text-sm sm:text-base"
           >
-            <Smartphone size={20} />
-            <span className="relative">Reserve Your Spot</span>
+            <Smartphone size={18} />
+            <span className="relative">Reserve</span>
           </motion.button>
         </motion.div>
 
         {/* Signature Tagline - Subtle Animation */}
         <motion.p
           variants={itemVariants}
-          className="mt-16 sm:mt-20 text-xs sm:text-sm tracking-[0.15em] uppercase font-medium text-white drop-shadow-lg flex items-center justify-center gap-3"
+          className="mt-8 sm:mt-20 text-xs tracking-[0.12em] sm:tracking-[0.15em] uppercase font-medium text-white drop-shadow-lg flex items-center justify-center gap-2 sm:gap-3 px-2"
         >
           <motion.span
             animate={{ opacity: [0.5, 1, 0.5] }}
@@ -225,22 +225,22 @@ export function HeroSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="relative z-20 mt-24 py-20 px-4 sm:px-6 lg:px-8"
+        className="relative z-20 mt-16 sm:mt-24 py-12 sm:py-20 px-3 sm:px-6 lg:px-8"
       >
         <motion.h2
           variants={itemVariants}
-          className="text-4xl sm:text-5xl font-bold text-center mb-4 text-stone-900"
+          className="text-3xl sm:text-5xl font-bold text-center mb-3 sm:mb-4 text-stone-900"
         >
           Our Signature Collection
         </motion.h2>
         <motion.p
           variants={itemVariants}
-          className="text-center text-stone-600 mb-16 max-w-2xl mx-auto"
+          className="text-center text-stone-600 mb-10 sm:mb-16 max-w-2xl mx-auto text-sm sm:text-base"
         >
           Handpicked blends and artisanal creations, crafted daily
         </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 max-w-6xl mx-auto">
           {[
             { icon: '☕', name: 'Signature Blend', desc: 'Smooth, balanced, unforgettable' },
             { icon: '🎨', name: 'Latte Art Master', desc: 'Visual presentation meets taste' },
@@ -250,11 +250,11 @@ export function HeroSection() {
               key={idx}
               variants={itemVariants}
               whileHover={{ y: -8 }}
-              className="bg-white/80 backdrop-blur-lg rounded-2xl p-8 sm:p-10 text-center shadow-lg border border-amber-100/50 hover:shadow-2xl transition-all"
+              className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 sm:p-10 text-center shadow-lg border border-amber-100/50 hover:shadow-2xl transition-all"
             >
-              <p className="text-5xl mb-4">{item.icon}</p>
-              <h3 className="text-xl font-semibold text-stone-900 mb-2">{item.name}</h3>
-              <p className="text-sm text-stone-600 leading-relaxed">{item.desc}</p>
+              <p className="text-4xl sm:text-5xl mb-3 sm:mb-4">{item.icon}</p>
+              <h3 className="text-lg sm:text-xl font-semibold text-stone-900 mb-2">{item.name}</h3>
+              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>
