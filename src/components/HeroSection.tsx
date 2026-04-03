@@ -35,19 +35,27 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden min-h-screen flex items-center justify-center py-16 sm:py-20 bg-stone-50 w-full">
-      {/* ===== CAFE BACKGROUND IMAGE ===== */}
+      {/* ===== CAFE VIDEO/BACKGROUND ===== */}
       
-      {/* Full-screen background image */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden bg-stone-900">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="w-full h-full object-cover opacity-80 mix-blend-overlay"
+          poster="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=2000&q=80"
+        >
+          <source src="https://player.vimeo.com/external/511342617.hd.mp4?s=340156bf957dfbebaf242302b5e027db8e6fd7e1&profile_id=174" type="video/mp4" />
+        </video>
         <img
-          src="https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=2000&q=80"
+          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=2000&q=80"
           alt="Cozy cafe background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hidden"
         />
-        {/* Overlay gradient for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-50/30 to-amber-900/40" />
-        {/* Subtle dark gradient overlay to improve white text legibility across viewports */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/30 pointer-events-none" />
+        {/* Warm Overlay gradient to break the "cold / hospital" feel */}
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-950/40 via-amber-900/40 to-stone-950/80 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 pointer-events-none" />
       </div>
 
       {/* Premium Gradient Accent - More Sophisticated */}
@@ -80,15 +88,15 @@ export function HeroSection() {
 
           {/* Mobile compact live badge (replaces large card on small screens) */}
           <div className="sm:hidden flex items-center justify-center mb-3">
-            <div className="inline-flex items-center gap-2 bg-white/95 text-amber-900 px-3 py-1.5 rounded-full shadow-md text-sm border border-white/80">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-              <span className="font-semibold">Lively & Social • 15m</span>
+            <div className="inline-flex items-center gap-2 bg-rose-500/90 backdrop-blur-md text-white px-4 py-2 rounded-full shadow-lg text-sm border border-rose-400">
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+              <span className="font-bold tracking-wide text-xs">Queue: 15m</span>
               <motion.span
                 className="text-base leading-none"
                 animate={{ rotate: [0, 12, -12, 0] }}
                 transition={{ duration: 2.6, repeat: Infinity }}
               >
-                ✨
+                🔥
               </motion.span>
             </div>
           </div>
@@ -119,14 +127,12 @@ export function HeroSection() {
         {/* Elegant Subheadline - Enhanced Visibility */}
         <motion.p
           variants={itemVariants}
-          className="text-lg sm:text-xl lg:text-2xl mb-8 sm:mb-16 max-w-3xl mx-auto font-light leading-relaxed text-white drop-shadow-lg px-2 sm:px-0"
-          style={{
-            textShadow: '0 2px 8px rgba(0,0,0,0.4), 0 4px 16px rgba(0,0,0,0.3)'
-          }}
+          className="text-lg sm:text-xl lg:text-2xl mb-8 sm:mb-12 max-w-3xl mx-auto font-medium leading-relaxed text-white drop-shadow-xl px-2 sm:px-0"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}
         >
           <motion.span
-            className="inline-block font-semibold bg-gradient-to-r from-amber-100 to-amber-50 bg-clip-text text-transparent"
-            animate={{ opacity: [0.8, 1, 0.9] }}
+            className="inline-block font-bold text-amber-200"
+            animate={{ opacity: [0.9, 1, 0.9] }}
             transition={{ duration: 4, repeat: Infinity }}
           >
             Where craft meets warmth
@@ -139,20 +145,22 @@ export function HeroSection() {
           variants={itemVariants}
           whileHover={{ y: -8, boxShadow: '0 24px 48px rgba(107, 101, 82, 0.15)' }}
           transition={{ duration: 0.3 }}
-          className="hidden sm:block bg-white/75 backdrop-blur-2xl rounded-3xl p-5 sm:p-10 lg:p-12 mb-8 sm:mb-16 shadow-2xl border border-white/50 relative overflow-hidden"
+          className="hidden sm:block relative overflow-hidden rounded-3xl p-5 sm:p-10 lg:p-12 mb-8 sm:mb-16"
         >
           {/* Subtle Gradient Border Animation */}
-          <div className="absolute inset-0 rounded-3xl p-[1px] bg-gradient-to-r from-amber-200/50 via-transparent to-sage-300/50 pointer-events-none" />
+          <div className="hidden sm:block absolute inset-0 bg-white/75 backdrop-blur-2xl rounded-3xl" />
+        {/* Subtle Gradient Border Animation */}
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-amber-200/20 via-transparent to-rose-300/20 pointer-events-none rounded-3xl border border-white/50 shadow-2xl" />
           
           <div className="relative z-10">
           <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
             <motion.div
-              className="w-2 sm:w-3 h-2 sm:h-3 bg-emerald-500 rounded-full flex-shrink-0"
+              className="w-2 h-2 bg-rose-500 rounded-full flex-shrink-0"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <p className="text-[11px] sm:text-sm font-medium tracking-widest uppercase text-amber-900 whitespace-nowrap">
-              Live Check • Real Time
+            <p className="text-[11px] sm:text-sm font-bold tracking-widest uppercase text-stone-800 whitespace-nowrap">
+              Live Check • Estimated Wait
             </p>
           </div>
 
@@ -178,23 +186,38 @@ export function HeroSection() {
             {/* Est. Wait Time - Premium Card */}
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="flex flex-col justify-center py-4 sm:py-8 px-3 sm:px-4 rounded-xl bg-gradient-to-br from-sage-50/50 to-sage-50/20 border border-sage-100/50 backdrop-blur-sm"
+              className="flex flex-col justify-center py-4 sm:py-8 px-3 sm:px-4 rounded-xl bg-gradient-to-br from-rose-50/60 to-rose-100/30 border border-rose-200/50 backdrop-blur-sm"
             >
-              <p className="text-4xl sm:text-7xl font-black mb-2 sm:mb-3 text-amber-900 font-mono">
+              <p className="text-4xl sm:text-7xl font-black mb-2 sm:mb-3 text-rose-900 font-mono">
                 {currentVibe.wait}
               </p>
-              <p className="text-[10px] sm:text-sm text-stone-600 mb-2 sm:mb-4 font-medium">Estimated Peak Time</p>
+              <p className="text-[10px] sm:text-sm text-rose-800 mb-2 sm:mb-4 font-bold">Drink Orders Estimate</p>
               <motion.p
-                className="text-xs text-emerald-600 font-semibold uppercase tracking-widest"
+                className="text-xs text-rose-700 font-bold uppercase tracking-widest bg-rose-200/30 inline-block px-2 py-1 rounded"
                 animate={{ opacity: [0.8, 1, 0.8] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                ⚡ Fast Service Available
+                ⚡ Fast Service
               </motion.p>
             </motion.div>
           </div>
           </div>
         </motion.div>
+
+        {/* Action Priority Queue CTA */}
+        <div className="flex flex-col items-center mt-4 sm:mt-6 mb-4 group cursor-pointer relative z-20">
+          <motion.a
+            whileHover={{ y: -4, scale: 1.02 }}
+            href="#queue"
+            className="flex items-center gap-3 px-6 py-3 rounded-full bg-rose-900/90 hover:bg-rose-800 text-white font-bold shadow-xl border border-rose-700 backdrop-blur-sm transition-all"
+          >
+            Get In Line
+            <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
+              <span className="text-white text-xs">→</span>
+            </div>
+          </motion.a>
+          <span className="mt-2 text-[10px] sm:text-xs text-amber-500 font-medium tracking-wide uppercase">Secure Priority Queue</span>
+        </div>
 
         {/* Premium CTA Buttons - Mobile-optimized and grouped */}
         <motion.div
@@ -205,7 +228,7 @@ export function HeroSection() {
             <motion.a
               href="#menu"
               whileHover={{ y: -4 }}
-              className="w-full inline-flex items-center justify-center px-4 py-2 text-sm sm:text-base rounded-full bg-amber-900 text-white font-semibold shadow text-center"
+              className="w-full inline-flex items-center justify-center px-4 py-2 text-sm sm:text-base rounded-full bg-stone-900 text-white font-bold shadow-lg text-center"
             >
               View Menu
             </motion.a>
@@ -213,21 +236,20 @@ export function HeroSection() {
             <motion.a
               href="#collection"
               whileHover={{ y: -2 }}
-              className="w-full inline-flex items-center justify-center px-4 py-2 text-sm sm:text-base rounded-full border border-white/30 bg-transparent text-white font-semibold text-center"
+              className="w-full inline-flex items-center justify-center px-4 py-2 text-sm sm:text-base rounded-full border-2 border-stone-100 bg-white/20 backdrop-blur-md text-white font-bold text-center hover:bg-white hover:text-stone-900 transition-colors"
             >
               See Collection
             </motion.a>
           </div>
 
-          {/* Reserve remains prominent on desktop; mobile gets a fixed footer */}
-          <div className="hidden sm:flex sm:justify-center sm:mt-4">
+          <div className="hidden sm:flex sm:justify-center mt-4">
             <motion.button
               whileHover={{ y: -6, boxShadow: '0 12px 24px rgba(107, 101, 82, 0.2)' }}
               whileTap={{ scale: 0.95 }}
-              className="group border-2 border-amber-900 bg-white/70 hover:bg-white backdrop-blur-sm text-amber-900 px-6 lg:px-14 py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-lg hover:border-amber-800 hover:shadow-2xl text-sm sm:text-base"
+              className="group border-2 border-stone-800 bg-white/80 hover:bg-stone-900 hover:text-white backdrop-blur-md text-stone-900 px-6 lg:px-14 py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-all duration-standard shadow-lg text-sm sm:text-base"
             >
               <Smartphone size={18} />
-              <span className="relative">Reserve</span>
+              <span className="relative">Reserve Table</span>
             </motion.button>
           </div>
         </motion.div>
@@ -237,9 +259,9 @@ export function HeroSection() {
           <motion.a
             href="#reserve"
             whileHover={{ y: -2 }}
-            className="w-full inline-flex items-center justify-center px-4 py-3 rounded-full bg-amber-900 text-white font-bold shadow-xl text-base text-center"
+            className="w-full inline-flex items-center justify-center px-4 py-4 rounded-full bg-stone-900 text-white font-bold shadow-2xl text-base text-center border-t border-stone-700"
           >
-            Reserve
+            Reserve Table
           </motion.a>
         </div>
 
@@ -295,11 +317,11 @@ export function HeroSection() {
               key={idx}
               variants={itemVariants}
               whileHover={{ y: -8 }}
-              className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 sm:p-10 text-center shadow-lg border border-amber-100/50 hover:shadow-2xl transition-all"
+              className="bg-white rounded-2xl p-6 sm:p-10 text-center shadow-lg border border-stone-100 hover:shadow-2xl transition-all"
             >
               <p className="text-4xl sm:text-5xl mb-3 sm:mb-4">{item.icon}</p>
-              <h3 className="text-lg sm:text-xl font-semibold text-stone-900 mb-2">{item.name}</h3>
-              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">{item.desc}</p>
+              <h3 className="text-lg sm:text-xl font-bold text-stone-900 mb-2">{item.name}</h3>
+              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-medium">{item.desc}</p>
             </motion.div>
           ))}
         </div>
