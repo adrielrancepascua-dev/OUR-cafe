@@ -1,4 +1,6 @@
-{
+import json
+
+data = {
   "menuItems": [
     {
       "id": 1,
@@ -82,59 +84,20 @@
     }
   ],
   "peakHours": [
-    {
-      "time": "6 AM",
-      "density": 15,
-      "recommendation": "Best Time"
-    },
-    {
-      "time": "8 AM",
-      "density": 65,
-      "recommendation": "Busy"
-    },
-    {
-      "time": "10 AM",
-      "density": 45,
-      "recommendation": "Moderate"
-    },
-    {
-      "time": "12 PM",
-      "density": 80,
-      "recommendation": "Peak Lunch"
-    },
-    {
-      "time": "2 PM",
-      "density": 35,
-      "recommendation": "Relaxed"
-    },
-    {
-      "time": "4 PM",
-      "density": 50,
-      "recommendation": "Afternoon Rush"
-    },
-    {
-      "time": "6 PM",
-      "density": 75,
-      "recommendation": "Dinner Rush"
-    },
-    {
-      "time": "8 PM",
-      "density": 40,
-      "recommendation": "Calm Evening"
-    }
+    { "time": "6 AM", "density": 15, "recommendation": "Best Time" },
+    { "time": "8 AM", "density": 65, "recommendation": "Busy" },
+    { "time": "10 AM", "density": 45, "recommendation": "Moderate" },
+    { "time": "12 PM", "density": 80, "recommendation": "Peak Lunch" },
+    { "time": "2 PM", "density": 35, "recommendation": "Relaxed" },
+    { "time": "4 PM", "density": 50, "recommendation": "Afternoon Rush" },
+    { "time": "6 PM", "density": 75, "recommendation": "Dinner Rush" },
+    { "time": "8 PM", "density": 40, "recommendation": "Calm Evening" }
   ],
   "vibes": [
-    {
-      "status": "Lively & Social",
-      "wait": "15m",
-      "crowd": "Bustling",
-      "emoji": "🎉"
-    },
-    {
-      "status": "Relaxed & Cozy",
-      "wait": "8m",
-      "crowd": "Comfortable",
-      "emoji": "☕"
-    }
+    { "status": "Lively & Social", "wait": "15m", "crowd": "Bustling", "emoji": "🎉" },
+    { "status": "Relaxed & Cozy", "wait": "8m", "crowd": "Comfortable", "emoji": "☕" }
   ]
 }
+
+with open("g:/All vs projects/idk/our-cafe-demo/data/menu.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)

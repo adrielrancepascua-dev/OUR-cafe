@@ -5,6 +5,8 @@ import { MenuPreview } from '@/components/MenuPreview';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { PeakHours } from '@/components/PeakHours';
 import OrderSummary from '@/components/OrderSummary';
+import { PaymentPartners } from '@/components/PaymentPartners';
+import { BehindTheCraft } from '@/components/BehindTheCraft';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -15,9 +17,19 @@ export default function Home() {
         <HeroSection />
       </section>
 
+      {/* Behind The Craft (Testimonials/Photos) */}
+      <section id="craft">
+        <BehindTheCraft />
+      </section>
+
       {/* Digital Menu Section */}
       <section id="menu">
         <MenuPreview />
+      </section>
+
+      {/* Payment Partners & Integrations */}
+      <section id="payment">
+        <PaymentPartners />
       </section>
 
       {/* Why Choose Us Section */}
