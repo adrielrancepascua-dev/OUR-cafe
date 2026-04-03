@@ -5,7 +5,15 @@ import { Navigation } from '../components/Navigation';
 
 export const metadata = {
   title: 'OUR Cafe - San Fernando',
-  description: 'The largest cafe in the Philippines. Exclusive. Seamless. Warm.',
+  description: 'Pampanga\'s largest minimalist dining space. Coffee, pastries, and experiences.',
+  manifest: '/manifest.webmanifest',
+};
+
+export const viewport = {
+  themeColor: '#451a03',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
