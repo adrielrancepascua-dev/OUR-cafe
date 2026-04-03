@@ -1,6 +1,6 @@
 'use client';
 
-import { HeroSection } from '@/components/HeroSection';
+import { HeroVideo } from '@/components/HeroVideo';
 import { MenuPreview } from '@/components/MenuPreview';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { PeakHours } from '@/components/PeakHours';
@@ -14,7 +14,7 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section id="hero">
-        <HeroSection />
+        <HeroVideo />
       </section>
 
       {/* Behind The Craft (Testimonials/Photos) */}
